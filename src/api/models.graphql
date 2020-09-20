@@ -1,0 +1,85 @@
+type User {
+  id: ID!
+  avatar: String
+  username: String! 
+  email: String! 
+  firstName: String 
+  lastName: String
+  fullName: String
+  isSelf: Boolean!
+  bio: String
+  level: Int!
+  discussions: [Discussion!]! 
+  discussionCount: Int!
+  posts: [Post!]! 
+  postsCount: Int!
+  likes: [Like!]! 
+  comments: [Comment!]! 
+  discussions: [Discussion!]!
+  loginSecret: String
+  createdAt: DateTime!
+  updateAt: DateTime
+}
+
+type Post {
+  id: ID!
+  location: String
+  caption: String!
+  user: User! 
+  files: [File!]! 
+  likes: [Like!]! 
+  isLiked: Boolean!
+  likeCount: Int!
+  hashTags: String!
+  views: Int!
+  commentCount: Int!
+  comments: [Comment!]!
+  createdAt: DateTime!
+  updateAt: DateTime
+}
+
+type Like {
+  id: ID!
+  user: User
+  post: Post 
+  discussion: Discussion 
+  createdAt: DateTime!
+  updateAt: DateTime
+}
+
+type Comment {
+  id: ID! 
+  text: String! 
+  user: User 
+  post: Post 
+  discussion: Discussion 
+  createdAt: DateTime!
+  updateAt: DateTime
+}
+
+type File {
+  id: ID!
+  url: String!
+  post: Post 
+  discussion: Discussion 
+  createdAt: DateTime!
+  updateAt: DateTime
+}
+
+
+type Discussion {
+  id: ID! 
+  location: String
+  caption: String!
+  hashTags: String!
+  user: User! 
+  files: [File!]! 
+  likes: [Like!]! 
+  isLiked: Boolean!
+  likeCount: Int!
+  views: Int!
+  commentCount: Int!
+  comments: [Comment!]!
+  createdAt: DateTime!
+  updateAt: DateTime
+}

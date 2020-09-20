@@ -1,0 +1,84 @@
+type User {
+  id: ID! @id
+  avatar: String
+  username: String! @unique
+  email: String! @unique
+  firstName: String @default(value: "")
+  lastName: String
+  fullName: String
+  isSelf: Boolean!
+  bio: String
+  level: Int!
+  discussions: [Discussion!]! @relation(name: "DiscussionsOfUser", onDelete: CASCADE)
+  discussionCount: Int!
+  posts: [Post!]! @relation(name: "PostsOfUser", onDelete: CASCADE)
+  postsCount: Int!
+  likes: [Like!]! @relation(name: "LikesOfUser", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentsOfUser", onDelete: CASCADE)
+  loginSecret: String
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
+
+type Post {
+  id: ID! @id
+  location: String
+  caption: String!
+  hashTags: String!
+  user: User! @relation(name: "PostsOfUser")
+  files: [File!]! @relation(name: "FilesOfPost", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesOfPost", onDelete: CASCADE)
+  isLiked: Boolean!
+  likeCount: Int!
+  views: Int!
+  commentCount: Int!
+  comments: [Comment!]! @relation(name: "CommentsOfPost", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
+
+type Like {
+  id: ID! @id
+  user: User @relation(name: "LikesOfUser")
+  post: Post @relation(name: "LikesOfPost")
+  discussion: Discussion @relation(name: "LikesOfDiscussion")
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
+
+type Comment {
+  id: ID! @id 
+  text: String! 
+  user: User @relation(name: "CommentsOfUser")
+  post: Post @relation(name: "CommentsOfPost")
+  discussion: Discussion @relation(name: "CommentsOfDiscussion")
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
+
+type File {
+  id: ID! @id
+  url: String!
+  post: Post @relation(name: "FilesOfPost")
+  discussion: Discussion @relation(name: "FilesOfDiscussion")
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
+
+
+type Discussion {
+  id: ID! @id
+  location: String
+  caption: String!
+  hashTags: String!
+  user: User! @relation(name: "DiscussionsOfUser")
+  files: [File!]! @relation(name: "FilesOfDiscussion", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesOfDiscussion", onDelete: CASCADE)
+  isLiked: Boolean!
+  likeCount: Int!
+  views: Int!
+  commentCount: Int!
+  comments: [Comment!]! @relation(name: "CommentsOfDiscussion", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updateAt: DateTime
+}
