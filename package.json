@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "Recycle dictionary by Graphql, Apollo and Prisma.",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.3"
+  },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js",
     "deploy": "prisma deploy",
+    "generate": "prisma generate",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "prisma": "npm run deploy && npm run generate",
     "build": "babel src -d build",
-    "prebuild": "yarn run prisma",
-    "postbuild": "cd src && copy ./api/**/*.graphql ../build/api/",
+    "prebuild": "npm run generate",
+    "postbuild": "npx copy src/api/**/**.graphql ./build/api",
     "start": "node build/server.js"
   },
   "repository": {
