@@ -5,10 +5,10 @@ export default {
         uploadDiscussion: async (_, args, { request, isAuthenticated }) => {
             isAuthenticated(request);
             const { user } = request;
-            const{ caption="", files=[], location="", hashTags="" } = args;
+            const{ caption="", files=[], title="", hashTags="" } = args;
             const discussion = await prisma.createDiscussion({ 
                 caption,
-                location,
+                title,
                 hashTags,
                 user: { connect: {id: user.id } },
                 isLiked: false,

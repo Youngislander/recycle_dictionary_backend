@@ -10,20 +10,19 @@ type User {
   bio: String
   level: Int!
   discussions: [Discussion!]! 
-  discussionCount: Int!
+  discussionsCount: Int
   posts: [Post!]! 
-  postsCount: Int!
+  postsCount: Int
   likes: [Like!]! 
   comments: [Comment!]! 
-  discussions: [Discussion!]!
   loginSecret: String
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }
 
 type Post {
   id: ID!
-  location: String
+  title: String
   caption: String!
   user: User! 
   files: [File!]! 
@@ -34,8 +33,8 @@ type Post {
   views: Int!
   commentCount: Int!
   comments: [Comment!]!
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }
 
 type Like {
@@ -43,8 +42,8 @@ type Like {
   user: User
   post: Post 
   discussion: Discussion 
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }
 
 type Comment {
@@ -53,8 +52,8 @@ type Comment {
   user: User 
   post: Post 
   discussion: Discussion 
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }
 
 type File {
@@ -62,14 +61,14 @@ type File {
   url: String!
   post: Post 
   discussion: Discussion 
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }
 
 
 type Discussion {
   id: ID! 
-  location: String
+  title: String
   caption: String!
   hashTags: String!
   user: User! 
@@ -80,6 +79,6 @@ type Discussion {
   views: Int!
   commentCount: Int!
   comments: [Comment!]!
-  createdAt: DateTime!
-  updateAt: DateTime
+  createdAt: String!
+  updateAt: String!
 }

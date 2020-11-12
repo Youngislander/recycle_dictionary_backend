@@ -8,7 +8,7 @@ type Mutation {
         id: String!,
         caption: String!,
         hashTag: String!,
-        location: String,
+        title: String,
         action: ACTIONS!,
         hashTags: String!,
         files: [String!]!

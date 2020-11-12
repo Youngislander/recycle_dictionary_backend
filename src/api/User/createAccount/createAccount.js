@@ -22,11 +22,10 @@ export default {
                 lastName,
                 bio,
                 loginSecret,
-                isFollowing:false,
                 isSelf:true,
-                followingCount: 0,
-                followersCount:0,
-                postsCount:0
+                postsCount:0,
+                level:1,
+                discussionCount:0
             }) 
         return true;
         }

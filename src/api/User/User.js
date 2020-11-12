@@ -10,11 +10,6 @@ export default {
         .count(),
       likes: ({ id }) => prisma.user({ id }).likes(),
       comments: ({ id }) => prisma.user({ id }).comments(),
-      commentsCount: ({ id }) =>
-      prisma
-        .commentsConnection({ where: { user: { id } } })
-        .aggregate()
-        .count(),
       discussions: ({ id }) => prisma.user({ id }).discussions(),
       discussionsCount: ({ id }) =>
       prisma

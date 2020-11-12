@@ -8,14 +8,16 @@ check list
 - [] Confirm Secret (Login)
 - [] Like/ Unlike a Discussion
 - [] Comment on post
-- [] Search 
+- [] Search by post
+- [] Search by discussion
+- [] Search by hashTag
 - [] Edit my profile
 - [] See my profile
 - [] See user profile
 - [] See the full post
-- [] Upload a post
-- [] Edit the post (Delete)
-- [] See the feed
+- [] See the post feed
+- [] Upload a Discussion
+- [] Edit the Discussion (Delete)
 - [] send private Message
 - [] See Discussions
 - [] See Discussion

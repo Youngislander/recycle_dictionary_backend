@@ -22,14 +22,14 @@ type User {
 
 type Post {
   id: ID! @id
-  location: String
+  title: String
   caption: String!
   hashTags: String!
   user: User! @relation(name: "PostsOfUser")
   files: [File!]! @relation(name: "FilesOfPost", onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete: CASCADE)
-  isLiked: Boolean!
   likeCount: Int!
+  isLiked: Boolean!
   views: Int!
   commentCount: Int!
   comments: [Comment!]! @relation(name: "CommentsOfPost", onDelete: CASCADE)
@@ -68,14 +68,14 @@ type File {
 
 type Discussion {
   id: ID! @id
-  location: String
+  title: String
   caption: String!
   hashTags: String!
   user: User! @relation(name: "DiscussionsOfUser")
   files: [File!]! @relation(name: "FilesOfDiscussion", onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesOfDiscussion", onDelete: CASCADE)
-  isLiked: Boolean!
   likeCount: Int!
+  isLiked: Boolean!
   views: Int!
   commentCount: Int!
   comments: [Comment!]! @relation(name: "CommentsOfDiscussion", onDelete: CASCADE)

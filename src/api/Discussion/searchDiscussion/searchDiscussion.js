@@ -6,7 +6,7 @@ export default {
          prisma.discussions({
              where: {
                  OR: [
-                     { location_starts_with: args.term },
+                     { title_starts_with: args.term },
                      { caption_starts_with: args.term },
                      { hashTags_contains: args.term }
                  ]
