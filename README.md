@@ -1,7 +1,7 @@
 # recycle_dictionary_backend
 Recycle dictionary backend by Graphql, Apollo and Prisma
 
-check list
+check lists
 
 - [] Create account
 - [] Request Secret
