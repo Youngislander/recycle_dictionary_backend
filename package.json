@@ -28,8 +28,12 @@
   "homepage": "https://github.com/Youngislander/recycle_dictionary_backend#readme",
   "dependencies": {
     "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
     "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "aws-sdk": "^2.786.0",
+    "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3",
     "merge-graphql-schemas": "^1.7.8",
     "morgan": "^1.10.0",
@@ -44,10 +48,6 @@
   },
   "devDependencies": {
     "babel-node": "0.0.1-security",
-    "nodemon": "^2.0.4",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
-    "dotenv": "^8.2.0"
+    "nodemon": "^2.0.4"
   }
 }
